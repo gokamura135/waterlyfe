@@ -1,0 +1,140 @@
+<html>
+	<head>
+		<style type="text/css">
+			.logout {
+				text-align:right;
+				font-size:35px;
+			}
+			.container {
+				background-color: yellow;
+				padding-right: 15px;
+				padding-left: 15px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+			input{
+				width: 350px;
+				font-size:35px;
+			}
+		</style>
+		<script type="text/javascript">
+			
+			var url;
+			var string;
+			var username;
+			var data;
+			
+			function delineate(str) {
+				if(str.search("username") != -1) {
+					theleft = str.indexOf("=") + 1;
+					return(str.substring(theleft, str.length));
+				}
+				else {
+					return "";
+				}
+			}
+		
+			/*
+			 * Function that is called when the document is ready.
+			 */
+			function initial() {
+				url = window.location;
+				string = new String(url);
+				username = delineate(string);
+				
+				data = new Array(5);
+				data[0] = new Array(5);
+				data[1] = new Array(5);
+				data[2] = new Array(5);
+				data[3] = new Array(5);
+				data[4] = new Array(5);
+				
+				initializeData();
+				
+				// add any functionality and listeners you want here
+				document.getElementById('header').innerHTML = "<font size=90>" +username + "'s Profile</font>";		
+				document.getElementById('name').value = username;
+				
+				for(var i = 0; i < data.length; i++) {
+					if(data[0][i] == username) {
+						document.getElementById('genderinfo').innerHTML = "<font size=70> Gender: " + data[1][i] + "</font>";
+						document.getElementById('ageinfo').innerHTML = "<font size=70> Age:    " + data[2][i] + "</font>";
+						document.getElementById('goalinfo').innerHTML = "<font size=70> Goal:   " + data[3][i] + "</font>";
+						document.getElementById('picinfo').innerHTML = "<img src='" + data[4][i] + "' width = 90% />"
+						break;
+					}
+				}
+			}
+			
+			function initializeData() {
+				data[0][0] = "george";
+				data[1][0] = "male";
+				data[2][0] = "23";
+				data[3][0] = "To be more healthy!";
+				data[4][0] = "http://fc04.deviantart.net/fs71/f/2011/146/e/8/1306441488_pondering_snorlax_by_glasspanda-d3h9thx.gif";
+				data[0][1] = "username";
+				data[1][1] = "male";
+				data[2][1] = "63";
+				data[3][1] = "Maybe I can show finally my mom I can take care of myself...";
+				data[4][1] = "./trekkie.jpg";
+				data[0][2] = "valerie";
+				data[1][2] = "female";
+				data[2][2] = "N/A";
+				data[3][2] = "N/A";
+				data[4][2] = "./notavailable.jpg";
+				data[0][3] = "bonnie";
+				data[1][3] = "female";
+				data[2][3] = "N/A";
+				data[3][3] = "N/A";
+				data[4][3] = "./notavailable.jpg";
+				data[0][4] = "ralphie";
+				data[1][4] = "male";
+				data[2][4] = "N/A";
+				data[3][4] = "N/A";
+				data[4][4] = "./notavailable.jpg";
+			}
+			
+			function getUser() {
+				return username;
+			}
+		</script>
+	</head>
+	<body onLoad="initial()">
+		<div class = "logout">
+			<a href = './index.html'>Logout</a>
+		</div>
+		<div>
+			<center>
+			<p id="header">
+			</p>
+			</center>
+		</div>
+		<div class = "container">
+			<center>
+			<table>
+				<tr>
+					<td>
+						<p id="picinfo">
+						</p>
+					</td>
+					<td>
+						<p id="genderinfo">
+						</p>
+						<p id="ageinfo">
+						</p>
+						<p id="goalinfo">
+						</p>
+					</td>
+				</tr>
+			</table>
+			</center>
+		</div>
+		<div>
+			</br>
+			<form style="margin-bottom:0;" method="link" action="./homepage.html"> 
+				<input type = "hidden" id="name" value="" name="username" >
+				<input type="submit" value="Back">
+			</form>
+		</div>
+	</body>
+</html>

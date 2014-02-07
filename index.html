@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<title>
+			Welcome
+		</title>
+		<script type="text/javascript" language="JavaScript" >
+			var data;
+		
+			function initial() {
+				initialData();
+			}
+		
+			function initialData() {
+				data = new Array(20);
+				for (var i = 0; i < 20; i++) {
+					data[i] = new Array(10);
+				}
+				
+				data[0][0] = "username";
+				data[0][1] = "password";
+				data[1][0] = "george";
+				data[1][1] = "okamura";
+				data[2][0] = "valerie";
+				data[2][1] = "bardot";
+				data[3][0] = "bonnie";
+				data[3][1] = "trang";
+				data[4][0] = "ralphie";
+				data[4][1] = "aguayo";
+			}
+			
+			function checkValidity(form){
+				var un = document.myform.username.value;
+				var pw = document.myform.pword.value;
+			
+				var valid = false;
+				var unArray = ["username1", "username2", "username3", "username4"];  // as many as you like - no comma after final entry
+				var pwArray = ["password1", "password2", "password3", "password4"];  // the corresponding passwords;
+				for (var i=0; i <unArray.length; i++) {
+					if ((un == unArray[i]) && (pw == pwArray[i])) {
+						valid = true;
+						document.myform.action = "./homepage.html";
+						break;
+					}
+				}
+				if (valid) {
+					alert ("Login was sucessfully processed.  You will be redirected to the members page now.");
+					window.location = "./homepage.html";
+					return false;
+				}
+				else {
+					document.myform.action = "";
+				}
+			}
+		</script>
+		<style type="text/css">
+			b{
+				font-size:35px;
+			}
+			input{
+				width: 350px;
+				font-size:35px;
+			}
+		</style>
+	</head>
+	<body onLoad="initial();" >
+		<div>
+			<h1>
+				<center>
+					<img src="welcome.png" width="80%" height="15%"> <br/>
+					<img src="homepage.png" width="70%" height="15%"> </br>
+					<img src="waterbottle.jpg" height="40%" />
+				</center>
+			</h1>
+		</div>
+		<div>
+			<center>
+				<form method = 'link' action = './homepage.html' onsubmit="checkValidity()">
+					<table>
+						<tr>
+							<td>
+								<center><b>Username: </b></center>
+							</td>
+							<td>
+								<input type='text' id='usernameInput' value='' name='username' /><br/>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<center><b>Password: </b></center>
+							</td>
+							<td>
+								<input type='password' id='passwordInput' value='' /><br/>
+							</td>
+						</tr>
+						<br/>
+					</table>
+					<br/><br/>
+					<input type='submit' onchange='checkValidity();' value='Login'  />
+					<a href='./signup.html'>
+						<input type='button' value='Sign up' />
+					</a>
+				</form>
+			</center>
+		</div>
+	</body>
+</html>

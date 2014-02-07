@@ -1,0 +1,84 @@
+<html>
+	<head>
+	</head>
+
+	<body>
+
+		<div>
+			<h1>
+				<center>
+					Calculate your water intake!
+				</center>
+			</h1>
+		</div>
+
+		Gender: <input type="radio" name="sex" value="male">Male
+		<input type="radio" name="sex" value="female">Female<br>
+		Weight: <input id="weight" type="text" value="">lbs<span id="fill"></span><br>
+		Minutes of Physical Activity: <input id="minutes" type="text" value=""><span id="fill1"></span><br>
+		Intensity Level: <input type="range" min="0" max="10" value="5" onchange="showValue(this.value)"/>
+		<span id="range">5</span>
+	<button onclick="calculate()">Calculate!</button><br>
+			<span id="description"></span><br>
+			Results: <span id="results">?</span> OZ
+
+			<button onclick="reset()">Reset</button>
+
+		<div>
+			</br>
+			<a href = "./index.html">
+				Back
+			</a>
+		</div>
+
+			<script type="text/javascript">
+		function showValue(newValue)
+	{
+		document.getElementById("range").innerHTML=newValue;
+		if(newValue == 0) {
+			document.getElementById("description").innerHTML="Minimal Intensity";
+		}
+			else if(newValue == 10) {
+			document.getElementById("description").innerHTML="Maximum Intensity";
+		}
+		else {
+				document.getElementById("description").innerHTML="";
+		}
+	}
+
+		function reset() {
+			document.getElementById("weight").value="";
+			document.getElementById("minutes").value="";
+			document.getElementById("results").innerHTML="?";
+		}
+
+		function calculate() {
+		var weight = document.getElementById("weight").value;
+		var minutes = document.getElementById("minutes").value;
+		var intensity = document.getElementById("range").innerHTML;
+
+		var oz;
+		oz = weight * (2/3);
+		oz = oz + (minutes*.4) + (10*intensity);
+
+		if(document.getElementById("weight").value && document.getElementById("minutes").value) {
+		document.getElementById("results").innerHTML = oz;
+	}
+	     if(document.getElementById("weight").value == "")
+				document.getElementById("fill").innerHTML = "   Please input info.";
+			else {
+				document.getElementById("fill").innerHTML = "";
+			}
+
+				     if(document.getElementById("minutes").value == "")
+				document.getElementById("fill1").innerHTML = "   Please input info.";
+			else {
+				document.getElementById("fill1").innerHTML = "";
+			}
+
+	}
+</script>
+
+	</body>
+
+</html>

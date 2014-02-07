@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<style type = "text/css">
+			.logout {
+				text-align:right;
+				font-size:35px;
+			}
+			input{
+				width: 350px;
+				font-size:35px;
+			}
+		</style>
+		<script type="text/javascript">
+			
+			var url;
+			var string;
+			var username;
+			
+			function delineate(str) {
+				if(str.search("username") != -1) {
+					theleft = str.indexOf("=") + 1;
+					return(str.substring(theleft, str.length));
+				}
+				else {
+					return "";
+				}
+			}
+		
+			/*
+			 * Function that is called when the document is ready.
+			 */
+			function initial() {
+				url = window.location;
+				string = new String(url);
+				username = delineate(string);
+				// add any functionality and listeners you want here
+				document.getElementById('name').value = username;
+			}
+			
+			function getUser() {
+				return username;
+			}
+		</script>
+	</head>
+	<body onLoad="initial()">
+		<div class = "logout">
+			<a href = './index.html'>Logout</a>
+		</div>
+		<div>
+			<h1>
+				Goals
+			</h1>
+		</div>
+		<div>
+			</br>
+			<form style="margin-bottom:0;" method="link" action="./homepage.html"> 
+				<input type = "hidden" id="name" value="" name="username" >
+				<input type="submit" value="Back">
+			</form>
+		</div>
+	</body>
+</html>
