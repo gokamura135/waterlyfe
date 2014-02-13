@@ -1,0 +1,22 @@
+{
+	"accounts": [
+		{
+			"username": "george",
+			"password": "george",
+			"age": "22",
+			"weight": "135",
+			"goal": "To become more healthy!",
+			"comments": "N/A",
+			"imageURL": "http://www.silver-islands.com/images/avatars/snorlax150.gif"			
+		},
+		{
+			"username": "george",
+			"password": "george",
+			"age": "22",
+			"weight": "135",
+			"goal": "To become more healthy!",
+			"comments": "N/A",
+			"imageURL": "http://www.silver-islands.com/images/avatars/snorlax150.gif"			
+		}
+	]
+}

@@ -1,0 +1,23 @@
+a.button_link,
+a:hover.button_link,
+a:focus.button_link,
+a:active.button_link 
+{
+	text-decoration: none;
+}
+
+.navmenu
+{
+	background-color: #000000;
+}
+
+.homepage_table
+{
+	width: 100%;
+}
+
+.homepage_td
+{
+	width: 50%;
+	text-align: center;
+}

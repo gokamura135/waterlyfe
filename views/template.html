@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Waterlyfe</title>
+		
+		<!-- Online custom-built css and javascript files -->
+		<link rel="stylesheet" href="themes/waterlyfe-theme.min.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+	
+		<!-- Manually custom-built css and javascript files -->
+		<link rel="stylesheet" href="" />
+		<script src=""></script>
+	</head>
+	<body>
+		<div data-role="page" data-theme="a">
+		
+			<div data-role="header">
+				<h1>Welcome, so-and-so</h1>
+				<a href="#popupNested" data-rel="popup" class="ui-nodisc-icon 
+				ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-bars 
+				ui-btn-icon-left ui-btn-icon-notext navmenu" data-transition="pop">
+					Menu
+				</a>
+				<div data-role="popup" id="popupNested" data-theme="none">
+					<div data-role="collapsible-set" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+						<div data-role="collapsible" data-inset="false">
+						<h2>My Profile</h2>
+							<ul data-role="listview">
+								<li><a href="myProfile.html" data-rel="dialog"
+								rel="external">
+									View My Profile</a></li>
+								<li><a href="./editProfile.html" data-rel="dialog"
+								rel="external">
+									Edit My Profile</a></li>
+								<li><a href="./history.html" data-rel="dialog"
+								rel="external">
+									View My History</a></li>
+								<li><a href="./goals.html" data-rel="dialog"
+								rel='external'>
+									View Goals
+								</a></li>
+								<li><a href="./editGoals.html" data-rel="dialog"
+								rel='external'>
+									Edit Goals
+								</a></li>
+							</ul>
+						</div><!-- /collapsible -->
+						<div data-role="collapsible" data-inset="false">
+						<h2>Calculator</h2>
+							<ul data-role="listview">
+								<li><a href="./calculator.html" data-rel="dialog"
+								rel='external'>
+									Use calculator
+								</a></li>
+							</ul>
+						</div><!-- /collapsible -->
+						<div data-role="collapsible" data-inset="false">
+						<h2>Set Reminder</h2>
+							<ul data-role="listview">
+								<li><a href="./setReminder.html" data-rel="dialog"
+								rel='external'>
+									Set Reminder
+								</a></li>
+								<li><a href="./editReminder.html" data-rel="dialog"
+								rel='external'>
+									Edit Reminder
+								</a></li>
+								<li><a href="./deleteReminder.html" data-rel="dialog"
+								rel='external'>
+									Delete Reminder
+								</a></li>
+							</ul>
+						</div><!-- /collapsible -->
+					</div><!-- /collapsible set -->
+				</div><!-- /popup -->
+				<a href="#popupDialog" data-rel="popup" 
+				data-position-to="window" data-transition="pop"
+				class="ui-nodisc-icon 
+				ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete 
+				ui-btn-icon-left ui-btn-icon-notext logout" data-transition="pop">
+					Logout
+				</a>
+				<div data-role="popup" id="popupDialog" data-overlay-theme="a" 
+					data-theme="a" data-dismissible="false" style="max-width:400px;">
+						<div data-role="header" data-theme="a">
+						<h1>Logout?</h1>
+						</div>
+						<div role="main" class="ui-content">
+							<h3 class="ui-title">Are you sure you want to logout?</h3>
+							<a href="#login" rel='external'
+								class="ui-btn ui-corner-all ui-shadow 
+								ui-btn-inline ui-btn-b"  
+								data-transition="flow">Logout</a>
+							<a href="#" class="ui-btn ui-corner-all ui-shadow 
+								ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+						</div>
+					</div>
+			</div><!-- /header -->
+			
+			<div data-role="content" data-theme="a">
+				
+			
+				<p>hello blah blah</p>
+				
+				<a href='./homepage.html' rel='external'
+					class="ui-btn ui-icon-home ui-btn-icon-left 
+						ui-corner-all ui-shadow">Back to Home</a>
+			</div>
+			
+			<div data-role="footer">
+				<h4>Page Footer</h4>
+			</div><!-- /footer -->
+	</body>
+</html>
