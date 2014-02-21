@@ -23,9 +23,7 @@
 		<script src="js/index.js"></script>
 	</head>
 	
-	<!-- Water filling animation -->
-	<link rel="stylesheet" type="text/css" href="water.css">	
-	<body onLoad='initial();'>
+	<body>
 		<!-- Start of Homepage -->
 		<div data-role="page" data-theme="a">
 
@@ -117,6 +115,8 @@
 
 			<div data-role="content" data-theme="a">
 				<h2>My Goals</h2>
+				
+				<h4>Total amount of water for today: {{water}} oz.</h4>
 				
 				<form style="margin-bottom:0;" method="get" action="./myProfile"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >

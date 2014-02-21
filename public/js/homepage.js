@@ -1,6 +1,6 @@
 function initial(current, water) {
 	var rows = water; // 20; //document.getElementById('glass').value;
-	var heightNum = 400/rows;
+	var heightNum = 200/rows;
 	//console.log(rows);
 	//alert("hello?");
 

@@ -4,10 +4,20 @@ var data = require('../data.json');
 exports.view = function(req, res){
 	console.log(data);
 	var username = req.query.username;
+	var water = "";
+	
+	for(var i = 0; i < data["accounts"].length; i++) {
+		if(data["accounts"][i].username == username) {
+			water = data["accounts"][i].water;
+		}
+	}
+	
+	console.log(water);
 	
 	res.render('goals', 
 	{
-		'username': username
+		'username': username,
+		'water': water
 	});
 };
 
