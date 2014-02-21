@@ -1,31 +1,32 @@
 var count = 0;
 
-function addWater() {
+function addWater(current) {
 	console.log(count);
+	//count = Integer(current);
 	
-	var row2 = document.querySelector("#row2");
-	var row3 = document.querySelector("#row3");
-	var row4 = document.querySelector("#row4");
-	var row5 = document.querySelector("#row5");
+	var amount = parseInt(document.getElementById("amount").value);
+	//document.getElementById("row0").innerHTML = amount;
 	
-	count++;
+	var row = 0;
 	
-	switch(count) {
-		case 1:
-			console.log("hereeee");
-			row2.style.backgroundColor = "#0000FF";
-			break;
-		case 2:
-			row3.style.backgroundColor = "#0000FF";
-			break;
-		case 3:
-			row4.style.backgroundColor = "#0000FF";
-			break;
-		case 4:
-			row5.style.backgroundColor = "#0000FF";
-			alert("Daily Water Intake Complete!")
-			break;
-		default:
-			break;
+	for(var i = count; i < count + amount; i++) {
+		document.getElementById("row0").innerHTML = i;
+		row = document.querySelector("#row" + String(i));
+		if(row != null)
+			row.style.backgroundColor = "#0000FF";
 	}
+	
+	count = count + amount;
+	//current = count;
+	
+	var numRows = document.getElementById("waterTable").rows.length;
+	
+	if(count >= numRows) {
+		alert("Daily Water Intake Complete!");
+	}
+	
+	document.getElementById("glass_label").innerHTML = String(count) + "/" + String(numRows);
+	
+	//return current;
+	
 }

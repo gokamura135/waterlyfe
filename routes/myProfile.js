@@ -19,8 +19,6 @@ exports.view = function(req, res){
 		}
 	}
 	
-	console.log(username);
-	
 	res.render('myProfile', 
 	{
 		'username': username,

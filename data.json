@@ -7,7 +7,9 @@
 			"weight": "135",
 			"goal": "To become more healthy!",
 			"comments": "N/A",
-			"imageURL": "http://www.silver-islands.com/images/avatars/snorlax150.gif"			
+			"imageURL": "http://www.silver-islands.com/images/avatars/snorlax150.gif",
+			"water": 125,
+			"current": 0
 		},
 		{
 			"username": "bonnie",
@@ -16,7 +18,9 @@
 			"weight": "135",
 			"goal": "To become more healthy!",
 			"comments": "N/A",
-			"imageURL": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1/c337.1.623.623/s160x160/1467428_10200182300599997_148071936_n.jpg"			
+			"imageURL": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1/c337.1.623.623/s160x160/1467428_10200182300599997_148071936_n.jpg",			
+			"water": 91,
+			"current": 0
 		}
 	]
 }

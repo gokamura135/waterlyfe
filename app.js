@@ -7,11 +7,13 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+//var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 // Example route
 // var user = require('./routes/user');
 var add = require('./routes/add');
+var addWater = require('./routes/addWater');
 var homepage = require('./routes/homepage');
 var signup = require('./routes/signup');
 var myProfile = require('./routes/myProfile');
@@ -25,6 +27,14 @@ var editReminder = require('./routes/editReminder');
 var deleteReminder = require('./routes/deleteReminder');
 
 var template = require('./routes/template');
+
+// Connect to the Mongo database, whether locally or on Heroku
+// MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
+
+//var local_database_name = 'waterlyfe';
+//var local_database_uri  = 'mongodb://localhost/' + local_database_name
+//var database_uri = process.env.MONGOLAB_URI || local_database_uri
+//mongoose.connect(database_uri);
 
 var app = express();
 
@@ -52,7 +62,8 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 // Example route
 // app.get('/users', user.list);
-//app.get('/add', add.addFriend);
+app.get('/add', add.addFriend);
+app.get('/addWater', addWater.addFriend);
 app.get('/homepage', homepage.view);
 app.get('/signup', signup.view);
 app.get('/myProfile', myProfile.view);

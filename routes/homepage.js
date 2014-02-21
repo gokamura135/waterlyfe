@@ -6,10 +6,38 @@ exports.view = function(req, res){
 	
 	var username = req.query.username;
 	
-	console.log(username);
+	var water = 1;
+	var current = 0;
+	
+	for(var i = 0; i < data["accounts"].length; i++) {
+		if(data["accounts"][i].username == username) {
+			water = data["accounts"][i].water;
+			current = data["accounts"][i].current;
+			break;
+		}
+	}
+	
+	//initial(water);
 	
 	res.render('homepage', 
 	{
-		'username': username
+		'username': username,
+		'water': water,
+		'current': current
 	});
+	
 };
+/*
+function add(current) {
+	concole.log(current);
+
+	var username = req.query.username;
+	
+	for(var i = 0; i < data["accounts"].length; i++) {
+		if(data["accounts"][i].username == username) {
+			data["accounts"][i].current = addWater(current);
+			break;
+		}
+	}
+}*/
+

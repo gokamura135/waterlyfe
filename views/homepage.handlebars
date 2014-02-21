@@ -21,9 +21,10 @@
 		<!-- Manually custom-built css and javascript files -->
 		<link rel="stylesheet" href="css/index.css" />
 		<script src="js/index.js"></script>
+		<script src="js/homepage.js"></script>
 	</head>
 	
-	<body>
+	<body onload='initial({{current}},{{water}});'>
 		<!-- Water filling animation -->
 		<link rel="stylesheet" href="css/water.css" />	
 	
@@ -120,15 +121,19 @@
 				<table class="homepage_table">
 				<tr>
 				<td class="homepage_td">
-					<table border=2 width=90%>
-						<tr><td id='row5'></td></tr>
-						<tr><td id='row4'></td></tr>
-						<tr><td id='row3'></td></tr>
-						<tr><td id='row2'></td></tr>
-						<tr><td id='row1'></td></tr>
-					</table>
+					<div id="glass_label">
+					So far: 
+					</div>
+					<div id="glass">
+					</div>
 				</td>
 				<td class="homepage_td">
+					<div>
+						Log amount (oz.):
+						<input type ="text" id="amount" value='0' name="amount" placeholder="oz">
+						<input type="button" value="Add Water" onclick="addWater({{current}});">
+					</div>
+					<br/>
 					<form style="margin-bottom:0;" method="get" action="./myProfile"> 
 						<input type = "hidden" id="name" value={{username}} name="username" >
 						<input type="submit" value="My Profile">
@@ -141,9 +146,6 @@
 						<input type = "hidden" id="name" value={{username}} name="username" >
 						<input type="submit" value="Set Reminder">
 					</form>
-					<div>
-						<input type="button" value="Add Water" onclick="addWater();">
-					</div>
 				</td>
 				</tr>
 				</table>

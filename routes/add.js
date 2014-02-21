@@ -2,17 +2,24 @@ var data = require("../data.json");
 
 exports.addFriend = function(req, res) {
 	// Your code goes here
-	var name = req.query.name;
-	var description = req.query.description;
+	var username = req.query.username;
+	var password = req.query.password;
 	var newFriend = 
 		{
-			"name": name,
-			"description": description,
-			"imageURL": "http://lorempixel.com/400/400/people"			
+			"username": username,
+			"password": password,
+			"age": "N/A",
+			"weight": "N/A",
+			"goal": "N/A",
+			"comments": "N/A",
+			"imageURL": "http://www.shiamatrimonial.co.uk/go_files/profiles/thumbs/no-user-icon-1.gif",			
+			"water": 10
 		};
 		
-	data["friends"].push(newFriend);
-	
+	data["accounts"].push(newFriend);
 	console.log(data);
-	res.render('add', data);
+
+	res.render('add', {
+		'username': username
+	});
  }

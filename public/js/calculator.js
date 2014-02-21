@@ -21,6 +21,7 @@ function reset() {
 function calculate() {
 	var weight = document.getElementById("weight").value;
 	var minutes = document.getElementById("minutes").value;
+	var resultsVal = document.getElementById("results").value;
 	var intensity = document.getElementById("range").innerHTML;
 
 	var oz;
@@ -29,6 +30,7 @@ function calculate() {
 
 	if(document.getElementById("weight").value && document.getElementById("minutes").value) {
 		document.getElementById("results").innerHTML = oz;
+		document.getElementById("results").value = oz;
 	}
 	if(document.getElementById("weight").value == "")
 		document.getElementById("fill").innerHTML = "   Please input info.";
@@ -43,3 +45,11 @@ function calculate() {
 	}
 
 }
+
+function addTotal() {
+	var results = document.getElementById("results").value;
+	console.log(results);
+	document.getElementById("totalAddition").value = results;
+}
+	
+	

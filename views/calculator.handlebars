@@ -23,10 +23,8 @@
 		<script src="js/index.js"></script>
 		<script src="js/calculator.js"></script>
 	</head>
-	
-	<!-- Water filling animation -->
-	<link rel="stylesheet" type="text/css" href="water.css">	
-	<body onLoad='initial();'>
+		
+	<body>
 		<!-- Start of Homepage -->
 		<div data-role="page" data-theme="a">
 
@@ -140,9 +138,14 @@
 					Intensity Level: <br/>
 					<input type="range" min="0" max="10" value="5" onchange="showValue(this.value)" size="150"/>
 					<span id="range">5</span><br/>
-					Results: <span id="results">?</span> OZ
+					Results: <span id="results" value='0'>?</span> OZ
 					<span id="description"></span><br>
 					<button onclick="calculate()">Calculate!</button>
+					<form role="form" method="get" action="/addWater">
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type="hidden" id="totalAddition" name="amount" value="" />
+					<input type="submit" onclick="addTotal();" value="Add on Water" />
+					</form>
 					<button onclick="reset()">Reset</button>
 				</div>
 
