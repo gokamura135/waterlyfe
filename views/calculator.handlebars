@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Waterlyfe</title>
+		<title>Go Hydrate</title>
 		
 		<!-- Online custom-built css and javascript files -->
 		
@@ -40,27 +40,23 @@
 				<div data-role="popup" id="popupNested" data-theme="none">
 					<div data-role="collapsible-set" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
 						<div data-role="collapsible" data-inset="false">
+						<h2>Home</h2>
+
+							<ul data-role="listview">
+								<li><form style="margin-bottom:0;" method="get" action="./homepage"> 
+								<input type = "submit" id="View" value="Home" >
+								
+								</form></li>
+							</ul>
+						</div>
+
+						<div data-role="collapsible" data-inset="false">
 						<h2>My Profile</h2>
+
 							<ul data-role="listview">
 								<li><form style="margin-bottom:0;" method="get" action="./myProfile"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="View My Profile">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editProfile"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Edit Profile">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./history"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="View My History">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./goals"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="View My Goals">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editGoals"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Edit My Goals">
+								<input type = "submit" id="View" value="View Profile" >
+								
 								</form></li>
 							</ul>
 						</div><!-- /collapsible -->
@@ -79,14 +75,7 @@
 								<li><form style="margin-bottom:0;" method="get" action="./setReminder"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="Set Reminder">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editReminder"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Edit Reminder">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./deleteReminder"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Delete Reminder">
+								
 								</form></li>
 							</ul>
 						</div><!-- /collapsible -->
@@ -154,7 +143,7 @@
 			</div>
 
 			<div data-role="footer">
-				<h5>Waterbenders</h5>
+				<h5>Go Hydrate</h5>
 			</div><!-- /footer -->
 			
 		</div><!-- /page -->

@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html>
+	
+<!-- widget for time-->
+	<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.22/themes/redmond/jquery-ui.css" />
+
+    <link rel="stylesheet" type="text/css" href="jquery.ptTimeSelect.css" />
+    <script type="text/javascript" src="jquery.ptTimeSelect.js"></script>
+
+</head>
+
+
+
+
+
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +42,7 @@
 	<link rel="stylesheet" type="text/css" href="water.css">	
 	<body onLoad='initial();'>
 		<!-- Start of Homepage -->
-		<div data-role="page" data-theme="a">
+				<div data-role="page" data-theme="a">
 
 			<div data-role="header">
 				<h1>Welcome, {{username}}.</h1>
@@ -39,27 +54,23 @@
 				<div data-role="popup" id="popupNested" data-theme="none">
 					<div data-role="collapsible-set" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
 						<div data-role="collapsible" data-inset="false">
+						<h2>Home</h2>
+
+							<ul data-role="listview">
+								<li><form style="margin-bottom:0;" method="get" action="./homepage"> 
+								<input type = "submit" id="View" value="Home" >
+								
+								</form></li>
+							</ul>
+						</div>
+
+						<div data-role="collapsible" data-inset="false">
 						<h2>My Profile</h2>
+
 							<ul data-role="listview">
 								<li><form style="margin-bottom:0;" method="get" action="./myProfile"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="View My Profile">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editProfile"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Edit Profile">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./history"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="View My History">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./goals"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="View My Goals">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editGoals"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Edit My Goals">
+								<input type = "submit" id="View" value="View Profile" >
+								
 								</form></li>
 							</ul>
 						</div><!-- /collapsible -->
@@ -78,18 +89,11 @@
 								<li><form style="margin-bottom:0;" method="get" action="./setReminder"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="Set Reminder">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editReminder"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Edit Reminder">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./deleteReminder"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Delete Reminder">
+								
 								</form></li>
 							</ul>
 						</div><!-- /collapsible -->
-					</div><!-- /collapsible set -->
+					</div>
 				</div><!-- /popup -->
 				<a href="#popupDialog" data-rel="popup" 
 				data-position-to="window" data-transition="pop"
@@ -126,24 +130,24 @@
 					<td>
 						<h5>Email: so-and-so@gmail.com </h5>
 						<a href="./editProfile.html" rel='external' class="ui-shadow ui-btn 
-						ui-corner-all ui-icon-edit ui-btn-icon-right">edit</a>
+						ui-corner-all ui-icon-edit ui-btn-icon-right">Edit</a>
 					</td>
 				</tr>
 				<tr>
 					<td id='setReminderTd'>
-						<h3>Day:</h3>
+					<h3>Day:</h3>
 					</td>
 					<td>
-						<select name="select-choice-1" id="select-choice-1">
-							<option value="">Choose weekday</option>
-							<option value="Sunday">Sunday</option>
-							<option value="Monday">Monday</option>
-							<option value="Tuesday">Tuesday</option>
-							<option value="Wednesday">Wednesday</option>
-							<option value="Thursday">Thursday</option>
-							<option value="Friday">Friday</option>
-							<option value="Saturday">Saturday</option>
-						</select>
+						<select name="day" id="day" multiple="multiple" data-native-menu="false">
+          <option value="">Day</option>
+          <option value="mon">Monday</option>
+          <option value="tue">Tuesday</option>
+          <option value="wed">Wednesday</option>
+          <option value="thu">Thursday</option>
+          <option value="fri">Friday</option>
+          <option value="sat">Saturday</option>
+          <option value="sun">Sunday</option>
+        </select>
 					</td>
 				</tr>
 				<tr>
@@ -151,8 +155,8 @@
 						<h3>Frequency:</h3>
 					</td>
 					<td>
-						<select name="select-choice-2" id="select-choice-2">
-							<option value="">Choose frequency</option>
+						<select name="frequency" id="frequency" data-native-menu="false">
+							<option value="">Choose Frequency</option>
 							<option value="1hr">Every Hour</option>
 							<option value="2hr">Every 2 Hours</option>
 							<option value="3hr">Every 3 Hours</option>
@@ -168,11 +172,210 @@
 					</td>
 					<td>
 						<label for="time-2">From:</label>
-						<input type="time" data-clear-btn="true" name="time-2" 
-						  id="time-2" value="">
+					
+<select name="time" id="time">
+	<option value="">Select</option>
+	<option value="5:00 AM">5:00 AM</option>
+	<option value="5:15 AM">5:15 AM</option>
+	<option value="5:30 AM">5:30 AM</option>
+	<option value="5:45 AM">5:45 AM</option>
+ 
+	<option value="6:00 AM">6:00 AM</option>
+	<option value="6:15 AM">6:15 AM</option>
+	<option value="6:30 AM">6:30 AM</option>
+	<option value="6:45 AM">6:45 AM</option>
+ 
+	<option value="7:00 AM">7:00 AM</option>
+	<option value="7:15 AM">7:15 AM</option>
+	<option value="7:30 AM">7:30 AM</option>
+	<option value="7:45 AM">7:45 AM</option>
+ 
+	<option value="8:00 AM">8:00 AM</option>
+	<option value="8:15 AM">8:15 AM</option>
+	<option value="8:30 AM">8:30 AM</option>
+	<option value="8:45 AM">8:45 AM</option>
+ 
+	<option value="9:00 AM">9:00 AM</option>
+	<option value="9:15 AM">9:15 AM</option>
+	<option value="9:30 AM">9:30 AM</option>
+	<option value="9:45 AM">9:45 AM</option>
+ 
+	<option value="10:00 AM">10:00 AM</option>
+	<option value="10:15 AM">10:15 AM</option>
+	<option value="10:30 AM">10:30 AM</option>
+	<option value="10:45 AM">10:45 AM</option>
+ 
+	<option value="11:00 AM">11:00 AM</option>
+	<option value="11:15 AM">11:15 AM</option>
+	<option value="11:30 AM">11:30 AM</option>
+	<option value="11:45 AM">11:45 AM</option>
+ 
+	<option value="12:00 PM">12:00 PM</option>
+	<option value="12:15 PM">12:15 PM</option>
+	<option value="12:30 PM">12:30 PM</option>
+	<option value="12:45 PM">12:45 PM</option>
+ 
+	<option value="1:00 PM">1:00 PM</option>
+	<option value="1:15 PM">1:15 PM</option>
+	<option value="1:30 PM">1:30 PM</option>
+	<option value="1:45 PM">1:45 PM</option>
+ 
+	<option value="2:00 PM">2:00 PM</option>
+	<option value="2:15 PM">2:15 PM</option>
+	<option value="2:30 PM">2:30 PM</option>
+	<option value="2:45 PM">2:45 PM</option>
+ 
+	<option value="3:00 PM">3:00 PM</option>
+	<option value="3:15 PM">3:15 PM</option>
+	<option value="3:30 PM">3:30 PM</option>
+	<option value="3:45 PM">3:45 PM</option>
+ 
+	<option value="4:00 PM">4:00 PM</option>
+	<option value="4:15 PM">4:15 PM</option>
+	<option value="4:30 PM">4:30 PM</option>
+	<option value="4:45 PM">4:45 PM</option>
+ 
+	<option value="5:00 PM">5:00 PM</option>
+	<option value="5:15 PM">5:15 PM</option>
+	<option value="5:30 PM">5:30 PM</option>
+	<option value="5:45 PM">5:45 PM</option>
+ 
+	<option value="6:00 PM">6:00 PM</option>
+	<option value="6:15 PM">6:15 PM</option>
+	<option value="6:30 PM">6:30 PM</option>
+	<option value="6:45 PM">6:45 PM</option>
+ 
+	<option value="7:00 PM">7:00 PM</option>
+	<option value="7:15 PM">7:15 PM</option>
+	<option value="7:30 PM">7:30 PM</option>
+	<option value="7:45 PM">7:45 PM</option>
+ 
+	<option value="8:00 PM">8:00 PM</option>
+	<option value="8:15 PM">8:15 PM</option>
+	<option value="8:30 PM">8:30 PM</option>
+	<option value="8:45 PM">8:45 PM</option>
+ 
+	<option value="9:00 PM">9:00 PM</option>
+	<option value="9:15 PM">9:15 PM</option>
+	<option value="9:30 PM">9:30 PM</option>
+	<option value="9:45 PM">9:45 PM</option>
+ 
+	<option value="10:00 PM">10:00 PM</option>
+	<option value="10:15 PM">10:15 PM</option>
+	<option value="10:30 PM">10:30 PM</option>
+	<option value="10:45 PM">10:45 PM</option>
+ 
+	<option value="11:00 PM">11:00 PM</option>
+	<option value="11:15 PM">11:15 PM</option>
+	<option value="11:30 PM">11:30 PM</option>
+	<option value="11:45 PM">11:45 PM</option>
+</select>
+
+
+
+
+
+
+
+						  
 						<label for="time-2">To:</label>
-						<input type="time" data-clear-btn="true" name="time-2" 
-						  id="time-2" value="">
+						<select name="time" id="time">
+	<option value="">Select</option>
+	<option value="5:00 AM">5:00 AM</option>
+	<option value="5:15 AM">5:15 AM</option>
+	<option value="5:30 AM">5:30 AM</option>
+	<option value="5:45 AM">5:45 AM</option>
+ 
+	<option value="6:00 AM">6:00 AM</option>
+	<option value="6:15 AM">6:15 AM</option>
+	<option value="6:30 AM">6:30 AM</option>
+	<option value="6:45 AM">6:45 AM</option>
+ 
+	<option value="7:00 AM">7:00 AM</option>
+	<option value="7:15 AM">7:15 AM</option>
+	<option value="7:30 AM">7:30 AM</option>
+	<option value="7:45 AM">7:45 AM</option>
+ 
+	<option value="8:00 AM">8:00 AM</option>
+	<option value="8:15 AM">8:15 AM</option>
+	<option value="8:30 AM">8:30 AM</option>
+	<option value="8:45 AM">8:45 AM</option>
+ 
+	<option value="9:00 AM">9:00 AM</option>
+	<option value="9:15 AM">9:15 AM</option>
+	<option value="9:30 AM">9:30 AM</option>
+	<option value="9:45 AM">9:45 AM</option>
+ 
+	<option value="10:00 AM">10:00 AM</option>
+	<option value="10:15 AM">10:15 AM</option>
+	<option value="10:30 AM">10:30 AM</option>
+	<option value="10:45 AM">10:45 AM</option>
+ 
+	<option value="11:00 AM">11:00 AM</option>
+	<option value="11:15 AM">11:15 AM</option>
+	<option value="11:30 AM">11:30 AM</option>
+	<option value="11:45 AM">11:45 AM</option>
+ 
+	<option value="12:00 PM">12:00 PM</option>
+	<option value="12:15 PM">12:15 PM</option>
+	<option value="12:30 PM">12:30 PM</option>
+	<option value="12:45 PM">12:45 PM</option>
+ 
+	<option value="1:00 PM">1:00 PM</option>
+	<option value="1:15 PM">1:15 PM</option>
+	<option value="1:30 PM">1:30 PM</option>
+	<option value="1:45 PM">1:45 PM</option>
+ 
+	<option value="2:00 PM">2:00 PM</option>
+	<option value="2:15 PM">2:15 PM</option>
+	<option value="2:30 PM">2:30 PM</option>
+	<option value="2:45 PM">2:45 PM</option>
+ 
+	<option value="3:00 PM">3:00 PM</option>
+	<option value="3:15 PM">3:15 PM</option>
+	<option value="3:30 PM">3:30 PM</option>
+	<option value="3:45 PM">3:45 PM</option>
+ 
+	<option value="4:00 PM">4:00 PM</option>
+	<option value="4:15 PM">4:15 PM</option>
+	<option value="4:30 PM">4:30 PM</option>
+	<option value="4:45 PM">4:45 PM</option>
+ 
+	<option value="5:00 PM">5:00 PM</option>
+	<option value="5:15 PM">5:15 PM</option>
+	<option value="5:30 PM">5:30 PM</option>
+	<option value="5:45 PM">5:45 PM</option>
+ 
+	<option value="6:00 PM">6:00 PM</option>
+	<option value="6:15 PM">6:15 PM</option>
+	<option value="6:30 PM">6:30 PM</option>
+	<option value="6:45 PM">6:45 PM</option>
+ 
+	<option value="7:00 PM">7:00 PM</option>
+	<option value="7:15 PM">7:15 PM</option>
+	<option value="7:30 PM">7:30 PM</option>
+	<option value="7:45 PM">7:45 PM</option>
+ 
+	<option value="8:00 PM">8:00 PM</option>
+	<option value="8:15 PM">8:15 PM</option>
+	<option value="8:30 PM">8:30 PM</option>
+	<option value="8:45 PM">8:45 PM</option>
+ 
+	<option value="9:00 PM">9:00 PM</option>
+	<option value="9:15 PM">9:15 PM</option>
+	<option value="9:30 PM">9:30 PM</option>
+	<option value="9:45 PM">9:45 PM</option>
+ 
+	<option value="10:00 PM">10:00 PM</option>
+	<option value="10:15 PM">10:15 PM</option>
+	<option value="10:30 PM">10:30 PM</option>
+	<option value="10:45 PM">10:45 PM</option>
+ 
+	<option value="11:00 PM">11:00 PM</option>
+	<option value="11:15 PM">11:15 PM</option>
+	<option value="11:30 PM">11:30 PM</option>
+	<option value="11:45 PM">11:45 PM</option>
+</select>
 					</td>
 				</tr>
 				<tr>

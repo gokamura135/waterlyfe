@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,7 +30,7 @@
 	
 	<body>
 		<!-- Start of Homepage -->
-		<div data-role="page" data-theme="a">
+			<div data-role="page" data-theme="a">
 
 			<div data-role="header">
 				<h1>Welcome, {{username}}.</h1>
@@ -38,27 +42,23 @@
 				<div data-role="popup" id="popupNested" data-theme="none">
 					<div data-role="collapsible-set" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
 						<div data-role="collapsible" data-inset="false">
+						<h2>Home</h2>
+
+							<ul data-role="listview">
+								<li><form style="margin-bottom:0;" method="get" action="./homepage"> 
+								<input type = "submit" id="View" value="Home" >
+								
+								</form></li>
+							</ul>
+						</div>
+
+						<div data-role="collapsible" data-inset="false">
 						<h2>My Profile</h2>
+
 							<ul data-role="listview">
 								<li><form style="margin-bottom:0;" method="get" action="./myProfile"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="View My Profile">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editProfile"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Edit Profile">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./history"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="View My History">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./goals"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="View My Goals">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editGoals"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Edit My Goals">
+								<input type = "submit" id="View" value="View Profile" >
+								
 								</form></li>
 							</ul>
 						</div><!-- /collapsible -->
@@ -77,18 +77,11 @@
 								<li><form style="margin-bottom:0;" method="get" action="./setReminder"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="Set Reminder">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editReminder"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Edit Reminder">
-								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./deleteReminder"> 
-								<input type = "hidden" id="name" value={{username}} name="username" >
-								<input type="submit" value="Delete Reminder">
+								
 								</form></li>
 							</ul>
 						</div><!-- /collapsible -->
-					</div><!-- /collapsible set -->
+					</div>
 				</div><!-- /popup -->
 				<a href="#popupDialog" data-rel="popup" 
 				data-position-to="window" data-transition="pop"
@@ -118,14 +111,49 @@
 				<h2>My History (Functionality under construction)</h2>
 				
 				<label for="date">Start Date:</label>
-				<input type="date" name="date" id="date" value="">
-				<label for="date">End Date:</label>
-				<input type="date" name="date" id="date" value="">
+<!--calendar-->
+<html>
+<head>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
+</head>
+<body>
+<form>
+    <input id="datepicker" />
+</form>
+</body>
+</html>
+
+
 				
-				<div width=100%>
-				<center><canvas id="graph">   
-				</canvas></center>
-				</div>
+				<label for="date">End Date:</label>
+				<!--calendar-->
+<html>
+<head>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("#datepicker2").datepicker();
+  });
+  </script>
+</head>
+<body>
+<form>
+    <input id="datepicker2" />
+</form>
+</body>
+</html>
+				
 				
 				<br/>
 				
