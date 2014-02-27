@@ -23,9 +23,7 @@
 		<script src="js/index.js"></script>
 	</head>
 	
-	<!-- Water filling animation -->
-	<link rel="stylesheet" type="text/css" href="water.css">	
-	<body onLoad='initial();'>
+	<body>
 		<!-- Start of Homepage -->
 		<div data-role="page" data-theme="a">
 
@@ -128,6 +126,41 @@
 
 			<div data-role="content" data-theme="a">
 				<h2>Edit Profile:</h2>
+				
+				<center>
+				<form role="form" method="get" action="/editProfileConfirm" data-ajax="false" rel="external">
+				<table>
+					<tr>
+					<td><center><b>Username: </b></center></td>
+					<td><input type='text' id='usernameInput' value='{{username}}' name='username' /></td>
+					</tr>
+					<tr>
+					<td><center><b>Age: </b></center></td>
+					<td><input type='text' id='ageInput' value='{{age}}' name='age' /></td>
+					</tr>
+					<tr>
+					<td><center><b>Goal: </b></center></td>
+					<td><input type='text' id='goalInput' value='{{goal}}' name='goal' /></td>
+					</tr>
+					<tr>
+					<td><center><b>Comments: </b></center></td>
+					<td><input type='text' id='commentsInput' value='{{comments}}' name='comments' /></td>
+					</tr>
+					<tr>
+					<td><center><b>Email: </b></center></td>
+					<td><input type='email' id='emailInput' value='{{email}}' name='email' /></td>
+					</tr>	
+					<tr>
+					<td><center><b>Upload a New Picture: </b></center></td>
+					<td><input type="file" name="imageURL" id="imageURL" value="imageURL"></td>
+					</tr>	
+				</table>
+				
+				<input type="submit" id="submitBtn" class="btn btn-default" value="Submit Changes"></input>
+				
+				</form>
+				
+				</center>
 				
 				<form style="margin-bottom:0;" method="get" action="./myProfile"
 				data-ajax="false" rel="external"> 

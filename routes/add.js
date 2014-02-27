@@ -4,6 +4,7 @@ exports.addFriend = function(req, res) {
 	// Your code goes here
 	var username = req.query.username;
 	var password = req.query.password;
+	var email = req.query.email;
 	var newFriend = 
 		{
 			"username": username,
@@ -13,7 +14,9 @@ exports.addFriend = function(req, res) {
 			"goal": "N/A",
 			"comments": "N/A",
 			"imageURL": "http://www.shiamatrimonial.co.uk/go_files/profiles/thumbs/no-user-icon-1.gif",			
-			"water": 10
+			"water": 100,
+			"current": 0,
+			"email": email
 		};
 		
 	data["accounts"].push(newFriend);

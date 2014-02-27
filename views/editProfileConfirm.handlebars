@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Waterlyfe Signup</title>
+		
+		<!-- Online custom-built css and javascript files -->
+		<link rel="stylesheet" href="css/waterlyfe-theme.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/bootstrap-theme.css" rel="stylesheet">
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+	    
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+		
+		<!-- Manually custom-built css and javascript files -->
+		<!--
+		<link rel="stylesheet" href="./css/index.css" />
+		<script src="./js/index.js"></script> -->
+	</head>
+	<body>
+		<div data-role="page" data-theme="a">
+			<div data-role="header">
+				<h1>Welcome, {{username}}.</h1>
+				<a href="#popupNested" data-rel="popup" class="ui-nodisc-icon 
+				ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-bars 
+				ui-btn-icon-left ui-btn-icon-notext navmenu" data-transition="pop">
+					Menu
+				</a>
+				<div data-role="popup" id="popupNested" data-theme="none">
+					<div data-role="collapsible-set" data-theme="b" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" style="margin:0; width:250px;">
+						<div data-role="collapsible" data-inset="false">
+						<h2>My Profile</h2>
+							<ul data-role="listview">
+								<li><form style="margin-bottom:0;" method="get" action="./myProfile"
+								data-ajax="false" rel="external"> 
+								<input type = "hidden" id="name" value={{username}} name="username" >
+								<input type="submit" value="View My Profile">
+								</form></li>
+								<li><form style="margin-bottom:0;" method="get" action="./editProfile"
+								data-ajax="false" rel="external"> 
+								<input type = "hidden" id="name" value={{username}} name="username" >
+								<input type="submit" value="Edit Profile">
+								</form></li>
+								<li><form style="margin-bottom:0;" method="get" action="./history"
+								data-ajax="false" rel="external"> 
+								<input type = "hidden" id="name" value={{username}} name="username" >
+								<input type="submit" value="View My History">
+								</form></li>
+								<li><form style="margin-bottom:0;" method="get" action="./goals"
+								data-ajax="false" rel="external"> 
+								<input type = "hidden" id="name" value={{username}} name="username" >
+								<input type="submit" value="View My Goals">
+								</form></li>
+								<li><form style="margin-bottom:0;" method="get" action="./editGoals"
+								data-ajax="false" rel="external"> 
+								<input type = "hidden" id="name" value={{username}} name="username" >
+								<input type="submit" value="Edit My Goals">
+								</form></li>
+							</ul>
+						</div><!-- /collapsible -->
+						<div data-role="collapsible" data-inset="false">
+						<h2>Calculator</h2>
+							<ul data-role="listview">
+								<li><form style="margin-bottom:0;" method="get" action="./calculator"
+								data-ajax="false" rel="external"> 
+								<input type = "hidden" id="name" value={{username}} name="username" >
+								<input type="submit" value="Use Calculator">
+								</form></li>
+							</ul>
+						</div><!-- /collapsible -->
+						<div data-role="collapsible" data-inset="false">
+						<h2>Set Reminder</h2>
+							<ul data-role="listview">
+								<li><form style="margin-bottom:0;" method="get" action="./setReminder"
+								data-ajax="false" rel="external"> 
+								<input type = "hidden" id="name" value={{username}} name="username" >
+								<input type="submit" value="Set Reminder">
+								</form></li>
+								<li><form style="margin-bottom:0;" method="get" action="./editReminder"
+								data-ajax="false" rel="external"> 
+								<input type = "hidden" id="name" value={{username}} name="username" >
+								<input type="submit" value="Edit Reminder">
+								</form></li>
+								<li><form style="margin-bottom:0;" method="get" action="./deleteReminder"
+								data-ajax="false" rel="external"> 
+								<input type = "hidden" id="name" value={{username}} name="username" >
+								<input type="submit" value="Delete Reminder">
+								</form></li>
+							</ul>
+						</div><!-- /collapsible -->
+					</div><!-- /collapsible set -->
+				</div><!-- /popup -->
+				<a href="#popupDialog" data-rel="popup" 
+				data-position-to="window" data-transition="pop"
+				class="ui-nodisc-icon 
+				ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete 
+				ui-btn-icon-left ui-btn-icon-notext logout" data-transition="pop">
+					Logout
+				</a>
+				<div data-role="popup" id="popupDialog" data-overlay-theme="a" 
+					data-theme="a" data-dismissible="false" style="max-width:400px;">
+						<div data-role="header" data-theme="a">
+						<h1>Logout?</h1>
+						</div>
+						<div role="main" class="ui-content">
+							<h3 class="ui-title">Are you sure you want to logout?</h3>
+							<a href="./" 
+								class="ui-btn ui-corner-all ui-shadow 
+								ui-btn-inline ui-btn-b"  
+								data-transition="flow" 
+								data-ajax="false" rel="external">Logout</a>
+							<a href="#" class="ui-btn ui-corner-all ui-shadow 
+								ui-btn-inline ui-btn-b" data-rel="back"
+								data-ajax="false" rel="external">Cancel</a>
+						</div>
+					</div>
+			</div><!-- /header -->
+			
+			<div data-role="content" data-theme="a">
+				
+				<form style="margin-bottom:0;" method="get" action="./homepage"
+				data-ajax="false" rel="external"> 
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type="submit" value="Go to Homepage">
+				</form>
+			</div>
+			
+			<div data-role="footer">
+				<h5>Waterbenders</h5>
+			</div><!-- /footer -->
+	</body>
+</html>

@@ -3,6 +3,7 @@
 		{
 			"username": "george",
 			"password": "george",
+			"email": "gokamura@ucsd.edu",
 			"age": "22",
 			"weight": "135",
 			"goal": "To become more healthy!",
@@ -14,6 +15,7 @@
 		{
 			"username": "bonnie",
 			"password": "bonnie",
+			"email": "bonnie@gmail.com",
 			"age": "22",
 			"weight": "135",
 			"goal": "To become more healthy!",
