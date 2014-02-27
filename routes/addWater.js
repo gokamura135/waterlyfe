@@ -13,7 +13,7 @@ exports.addFriend = function(req, res) {
 		}
 	}
 	
-	data["accounts"][i].water = currTotal + parseInt(amount);
+	data["accounts"][i].water = parseInt(amount);
 		
 	//data["accounts"].push(newFriend);
 	console.log(data);
