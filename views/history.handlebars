@@ -20,7 +20,17 @@
 	    
 		<!-- Manually custom-built css and javascript files -->
 		<link rel="stylesheet" href="css/index.css" />
-
+		
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+				
+		<script>
+			$(document).ready(function() {
+				$("#datepicker").datepicker();
+				$("#datepicker2").datepicker();
+			});
+		</script>
 	</head>
 	
 	<body>
@@ -127,10 +137,18 @@
 			<div data-role="content" data-theme="a">
 				<h2>My History (Functionality under construction)</h2>
 				
-				<label for="date">Start Date:</label>
-				<input type="date" name="date" id="date" value="">
-				<label for="date">End Date:</label>
-				<input type="date" name="date" id="date" value="">
+				<form>
+					<table>
+						<tr>
+						<td>Start Date: </td>
+						<td><input id="datepicker" /></td>
+						</tr>
+						<tr>
+						<td>End Date: </td>
+						<td><input id="datepicker2" /></td>
+						</tr>
+					</table>
+				</form>
 				
 				<div width=100%>
 				<center><canvas id="graph">   
@@ -159,15 +177,13 @@
 				</tr>
 				</table>
 				
-				<form style="margin-bottom:0;" method="get" action="./myProfile
-				data-ajax="false" rel="external""
+				<form style="margin-bottom:0;" method="get" action="./myProfile" 
 				data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
 					<input type="submit" value="Back to My Profile">
 				</form>
 				
-				<form style="margin-bottom:0;" method="get" action="./homepage
-				data-ajax="false" rel="external""
+				<form style="margin-bottom:0;" method="get" action="./homepage" 
 				data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
 					<input type="submit" value="Back to Home">
