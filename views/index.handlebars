@@ -22,14 +22,15 @@
 		<![endif]-->
 		
 		<!-- Manually custom-built css and javascript files -->
+		<!--
 		<link rel="stylesheet" href="./css/index.css" />
-		<script src="./js/index.js"></script>
+		<script src="./js/index.js"></script> -->
 	</head>
 	
 	<body>
 	
 		<!-- Start of login page -->
-		<div data-role="page" data-theme="a">
+		<div data-role="page" data-theme="a" id="one">
 			<div data-role="header" >
 				<h1>Waterlyfe</h1>
 			</div>
@@ -40,7 +41,7 @@
 					and improve your water consumption needs!
 				</h2></p>
 				
-				<form id="loginForm" role="form" method="get" action="/homepage">
+				<form id="loginForm" role="form" method="get" action="/homepage" data-ajax="false" rel="external">
 					<h3>Login</h3>
 					<div class="form-group">
 					  <label for="username">Username:</label>
@@ -53,50 +54,77 @@
 					</div>
 					<input type="submit" id="loginBtn" class="btn btn-default" value="Login"></input>
 				</form>
-				<form id="signupForm" role="form" method="get" action="/signup">
+				<form id="signupForm" role="form" method="get" action="/signup" data-ajax="false" rel="external">
 					<input type="submit" id="signupBtn" class="btn btn-default" value="Sign up"></input>
 				</form>
 				
-				<p>
-					<h3>Why water consumption?</h3>
-					Staying hydrated has never been easier.<br/>
-					Do you drink enough water? Calculate your own recommended amount 
-					of water intake and keep track of how much water you drank.<br/>
-					Do you forget to drink water? Set reminders so you won’t forget 
-					to hydrate even during your busiest days.<br/>
-
-					Features:<br/>
-					<ul>
-					<li>Calculator – determine your recommended water intake based 
-					on your age, weight, and activity level</li>
-					<li>Reminder – set reminder for any time and days of the week 
-					so you won’t forget to drink water</li>
-					<li>Graph – visually compare your water drinking habits </li>
-					<li>Goals – set goals and what you hope to achieve</li>
-					</ul>
-					<br/>
-					<h4>It’s that simple. So what are you waiting for? Go hydrate!</h4>
-					<br/><br/>
-					
-					Benefits of drinking more water:
-					<ul>
-					<li>Improves your mood</li>
-					<li>Assists in weight loss </li>
-					<li>Speeds up metabolism</li>
-					<li>Prevents bad breath</li>
-					<li>Improves skin complexion</li>
-					<li>Removes toxins</li>
-					<li>Maintain balance of body fluids – want ph level 7</li>
-					<li>Saves money – water is free</li>
-					</ul>
-				</p>
-				
 			</div>
+			
+			<p> Learn more about us <a href="#two" data-transition="slideup">here</a>!</p>	
 			
 			<div data-role="footer">
 				<h5>Waterbenders</h5>
 			</div><!-- /footer -->
+			
+			<link rel="stylesheet" href="./css/index.css" />
+			<script src="js/index.js"></script> 
+			<!--
+			<script src="js/homepage.js"></script>
+			<script src="js/calculator.js"></script>
+			<script src="js/myProfile.js"></script>
+			<script src="js/history.js"></script> -->
 		</div>
+		
+		<!-- /PAGE TWO (ABOUT US) -->		
+		<div data-role="page" data-theme="a" id="two">
+
+			<div data-role="header" >
+					<h1>About Us</h1>
+					<a href="#one" class="ui-btn ui-btn-inline">Back</a>
+			</div>
+
+			<div data-role="content">
+				<p>
+					<h2>What is GoHydrate?</h2>
+					GoHydrate is the mobile web application to help and improve your water consumption needs. <br/>
+					<br/>
+					Do you drink enough water? <br/>
+					Calculate your own recommended amount of water intake and keep track of how much water you drink. <br/>
+					Do you forget to drink water? <br/>
+					Set reminders so you won't forget to hydrate even during your busiest days. <br/>
+					<br/>
+					<h5>Features: </h5>
+						<ul>
+						<li>Calculator – determine your recommended water intake based 
+						on your age, weight, and activity level</li>
+						<li>Reminder – set reminder for any time and days of the week 
+						so you won’t forget to drink water</li>
+						<li>Graph – visually compare your water drinking habits </li>
+						<li>Goals – set goals and what you hope to achieve</li>
+						</ul>
+						<br/>
+					<h5>Benefits of drinking more water: </h5>
+					<ul>
+						<li>Improves your mood</li>
+						<li>Assists in weight loss </li>
+						<li>Speeds up metabolism</li>
+						<li>Prevents bad breath</li>
+						<li>Improves skin complexion</li>
+						<li>Removes toxins</li>
+						<li>Maintains balance of body fluids</li>
+						<li>Saves money – water is free</li>
+					</ul>
+					<br/>
+
+					<h4> It's that simple. So what are you waiting for? Go hydrate? </h4>
+				</p>
+			</div>
+
+			<div data-role="footer">
+					<h5>Waterbenders</h5>
+			</div><!-- /footer -->
+
+		</div> <!-- /END OF ABOUT US -->
 	
 	</body>
 </html>

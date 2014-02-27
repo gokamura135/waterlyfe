@@ -40,23 +40,28 @@
 						<div data-role="collapsible" data-inset="false">
 						<h2>My Profile</h2>
 							<ul data-role="listview">
-								<li><form style="margin-bottom:0;" method="get" action="./myProfile"> 
+								<li><form style="margin-bottom:0;" method="get" action="./myProfile"
+								data-ajax="false" rel="external"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="View My Profile">
 								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editProfile"> 
+								<li><form style="margin-bottom:0;" method="get" action="./editProfile"
+								data-ajax="false" rel="external"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="Edit Profile">
 								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./history"> 
+								<li><form style="margin-bottom:0;" method="get" action="./history"
+								data-ajax="false" rel="external"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="View My History">
 								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./goals"> 
+								<li><form style="margin-bottom:0;" method="get" action="./goals"
+								data-ajax="false" rel="external"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="View My Goals">
 								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editGoals"> 
+								<li><form style="margin-bottom:0;" method="get" action="./editGoals"
+								data-ajax="false" rel="external"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="Edit My Goals">
 								</form></li>
@@ -65,7 +70,8 @@
 						<div data-role="collapsible" data-inset="false">
 						<h2>Calculator</h2>
 							<ul data-role="listview">
-								<li><form style="margin-bottom:0;" method="get" action="./calculator"> 
+								<li><form style="margin-bottom:0;" method="get" action="./calculator"
+								data-ajax="false" rel="external"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="Use Calculator">
 								</form></li>
@@ -74,15 +80,18 @@
 						<div data-role="collapsible" data-inset="false">
 						<h2>Set Reminder</h2>
 							<ul data-role="listview">
-								<li><form style="margin-bottom:0;" method="get" action="./setReminder"> 
+								<li><form style="margin-bottom:0;" method="get" action="./setReminder"
+								data-ajax="false" rel="external"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="Set Reminder">
 								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./editReminder"> 
+								<li><form style="margin-bottom:0;" method="get" action="./editReminder"
+								data-ajax="false" rel="external"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="Edit Reminder">
 								</form></li>
-								<li><form style="margin-bottom:0;" method="get" action="./deleteReminder"> 
+								<li><form style="margin-bottom:0;" method="get" action="./deleteReminder"
+								data-ajax="false" rel="external"> 
 								<input type = "hidden" id="name" value={{username}} name="username" >
 								<input type="submit" value="Delete Reminder">
 								</form></li>
@@ -104,12 +113,14 @@
 						</div>
 						<div role="main" class="ui-content">
 							<h3 class="ui-title">Are you sure you want to logout?</h3>
-							<a href="./" rel='external'
+							<a href="./" 
 								class="ui-btn ui-corner-all ui-shadow 
 								ui-btn-inline ui-btn-b"  
-								data-transition="flow">Logout</a>
+								data-transition="flow" 
+								data-ajax="false" rel="external">Logout</a>
 							<a href="#" class="ui-btn ui-corner-all ui-shadow 
-								ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+								ui-btn-inline ui-btn-b" data-rel="back"
+								data-ajax="false" rel="external">Cancel</a>
 						</div>
 					</div>
 			</div><!-- /header -->
