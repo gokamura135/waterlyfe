@@ -19,12 +19,12 @@
 	<body>
 		<div data-role="page" data-theme="a">
 			<div data-role="header" data-position="inline">
-				<h1>Waterlyfe</h1>
+				<h1>GoHydrate</h1>
 			</div>
 			
 			<div data-role="content" data-theme="a">
 				<center>
-				<form role="form" method="get" action="/add">
+				<form role="form" method="get" action="/add" data-ajax="false" rel="external">
 				<table>
 					<tr>
 					<td><center><b>Username: </b></center></td>
@@ -48,7 +48,7 @@
 				
 				</form>
 				
-				<a href='./index.html' rel='external'>
+				<a href='./index.html' data-ajax="false" rel="external">
 				<input type='button' id='cancelbtn' value='Cancel' class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-right"/>
 				</a>
 				</center>
