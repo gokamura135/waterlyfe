@@ -59,7 +59,63 @@
 				
 			</div>
 			
-			<p> Learn more about us <a href="#two" data-transition="slideup">here</a>!</p>	
+			{{#if redesign}}
+				<p> Learn more about us <a href="#two" data-transition="slideup">here</a>!</p>	
+			{{else}}
+				<a href="#popupAbout" data-rel="popup" class="ui-nodisc-icon 
+				ui-btn" data-transition="pop">
+					Learn more about us here!
+				</a>
+				<div data-role="popup" id="popupAbout" data-theme="b" 
+				data-content-theme="a" style="margin:30; background:#878787;">
+					<div data-role="header" >
+					<h1>About Us</h1>
+					<a href="#one" class="ui-btn ui-btn-inline">Back</a>
+				</div>
+
+				<div data-role="content">
+					<p>
+						<h2>What is GoHydrate?</h2>
+						GoHydrate is the mobile web application to help and improve your water consumption needs. <br/>
+						<br/>
+						Do you drink enough water? <br/>
+						Calculate your own recommended amount of water intake and keep track of how much water you drink. <br/>
+						Do you forget to drink water? <br/>
+						Set reminders so you won't forget to hydrate even during your busiest days. <br/>
+						<br/>
+						<h5>Features: </h5>
+							<ul>
+							<li>Calculator – determine your recommended water intake based 
+							on your age, weight, and activity level</li>
+							<li>Reminder – set reminder for any time and days of the week 
+							so you won’t forget to drink water</li>
+							<li>Graph – visually compare your water drinking habits </li>
+							<li>Goals – set goals and what you hope to achieve</li>
+							</ul>
+							<br/>
+						<h5>Benefits of drinking more water: </h5>
+						<ul>
+							<li>Improves your mood</li>
+							<li>Assists in weight loss </li>
+							<li>Speeds up metabolism</li>
+							<li>Prevents bad breath</li>
+							<li>Improves skin complexion</li>
+							<li>Removes toxins</li>
+							<li>Maintains balance of body fluids</li>
+							<li>Saves money – water is free</li>
+						</ul>
+						<br/>
+
+						<h4> It's that simple. So what are you waiting for? Go hydrate? </h4>
+					</p>
+				</div>
+
+				<div data-role="footer">
+						<h5>Waterbenders</h5>
+				</div><!-- /footer -->
+				</div><!-- /popup -->
+			{{/if}}
+			
 			
 			<div data-role="footer">
 				<h5>Waterbenders</h5>
