@@ -18,7 +18,7 @@ exports.addFriend = function(req, res) {
 	//data["accounts"].push(newFriend);
 	console.log(data);
 
-	res.render('add', {
+	res.render('addWater', {
 		'username': username
 	});
  }
