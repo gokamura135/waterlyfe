@@ -10,7 +10,10 @@
 			"comments": "N/A",
 			"imageURL": "http://www.silver-islands.com/images/avatars/snorlax150.gif",
 			"water": 125,
-			"current": 0
+			"current": 0,
+			"reminder1": "03/31/2014 every day @ 2:00PM",
+			"reminder2": "04/01/2014 once @ 3:00AM",
+			"reminder3": "05/06/2015 every 2 hours @ 5:00PM"
 		},
 		{
 			"username": "bonnie",
@@ -22,7 +25,10 @@
 			"comments": "N/A",
 			"imageURL": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1/c337.1.623.623/s160x160/1467428_10200182300599997_148071936_n.jpg",			
 			"water": 91,
-			"current": 0
+			"current": 0,
+			"reminder1": "03/31/2014 every day @ 2:00PM",
+			"reminder2": "04/01/2014 once @ 3:00AM",
+			"reminder3": "05/06/2015 every 2 hours @ 5:00PM"
 		}
 	]
 }

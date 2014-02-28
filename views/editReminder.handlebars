@@ -91,6 +91,45 @@
 			<div role="main" class="ui-content">
 				<h2>Edit Reminder</h2>
 			
+					<u>Available Reminders</u>
+				<table>
+					<tr>
+						<td>
+					{{reminder1}} 	
+						</td>
+						<td>
+				<form style="margin-bottom:0;" method="get" action="./editReminder1"> 
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type="submit" value="edit">
+				</form>
+						</td>
+					</tr>
+					<tr>
+						<td>
+					{{reminder2}} 
+						</td>
+						<td>
+				<form style="margin-bottom:0;" method="get" action="./editReminder1"> 
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type="submit" value="edit">
+				</form>
+						</td>
+					<tr>
+						<td>
+					{{reminder3}}
+						</td>
+						<td>
+						 <button class="">edit</button>
+						</td>
+					</tr>
+				</table>
+			
+				<form style="margin-bottom:0;" method="get" action="./setReminder"
+				data-ajax="false" rel="external"> 
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type="submit" value="Return to Set Reminder">
+				</form>
+			
 				<form style="margin-bottom:0;" method="get" action="./homepage"
 				data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >

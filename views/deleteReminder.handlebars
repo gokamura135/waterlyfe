@@ -21,6 +21,7 @@
 		<!-- Manually custom-built css and javascript files -->
 		<link rel="stylesheet" href="css/index.css" />
 		<script src="js/index.js"></script>
+		<script type="text/javascript" src="js/deleteReminder.js"></script>
 	</head>
 	
 	<!-- Water filling animation -->
@@ -90,6 +91,39 @@
 
 			<div role="main" class="ui-content">
 				<h2>Delete Reminder</h2>
+			
+					<u>Available Reminders</u><br>
+				<table>
+					<tr>
+						<td class="" id="r1">
+					{{reminder1}} 	
+						</td>
+						<td>
+							<button class="" onClick = "this.style.visibility= 'hidden'; hide();">delete</button>
+						</td>
+					</tr>
+					<tr>
+						<td id="r2">
+					{{reminder2}} 
+						</td>
+						<td>
+					<button onClick="this.style.visibility= 'hidden'; hide2();">delete</button>
+						</td>
+					<tr>
+						<td class="z" id='r3'>
+					{{reminder3}}
+						</td>
+						<td>
+						 <button onClick = "this.style.visibility= 'hidden'; hide3();">delete</button>
+						</td>
+					</tr>
+				</table>
+			
+				<form style="margin-bottom:0;" method="get" action="./setReminder"
+				data-ajax="false" rel="external"> 
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type="submit" value="Return to Set Reminder">
+				</form>
 			
 				<form style="margin-bottom:0;" method="get" action="./homepage"
 				data-ajax="false" rel="external"> 

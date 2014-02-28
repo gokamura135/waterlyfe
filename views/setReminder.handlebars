@@ -372,6 +372,18 @@
 						</div>
 				</div>
 				
+				<form style="margin-bottom:0;" method="get" action="./editReminder"
+				data-ajax="false" rel="external"> 
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type="submit" value="Edit Reminder">
+				</form>
+				
+				<form style="margin-bottom:0;" method="get" action="./deleteReminder"
+				data-ajax="false" rel="external"> 
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type="submit" value="Delete Reminder">
+				</form>
+				
 				<form style="margin-bottom:0;" method="get" action="./homepage"
 				data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
