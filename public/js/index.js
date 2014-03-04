@@ -30,3 +30,7 @@ function addWater(current) {
 	//return current;
 	
 }
+
+$('#aboutLink').on('click', function() {
+  ga('send', 'event', 'about', 'click');
+});
