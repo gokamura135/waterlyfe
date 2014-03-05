@@ -5,6 +5,7 @@ exports.view = function(req, res){
 	console.log(data);
 	var username = req.query.username;
 	var current = req.query.current;
+	var email = '';
 	
 	for(var i = 0; i < data["accounts"].length; i++) {
 		if(data["accounts"][i].username == username) {
