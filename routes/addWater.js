@@ -4,11 +4,11 @@ exports.addFriend = function(req, res) {
 	// Your code goes here
 	var username = req.query.username;
 	var amount = req.query.amount;
-	var currTotal = 0;
+	var current = 0;
 	
 	for(var i = 0; i < data["accounts"].length; i++) {
 		if(data["accounts"][i].username == username) {
-			currTotal = data["accounts"][i].water;
+			current = data["accounts"][i].current;
 			break;
 		}
 	}
@@ -19,6 +19,7 @@ exports.addFriend = function(req, res) {
 	console.log(data);
 
 	res.render('addWater', {
-		'username': username
+		'username': username,
+		'current': current
 	});
  }

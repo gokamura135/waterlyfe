@@ -9,7 +9,14 @@ exports.view = function(req, res){
 	var comments = "";
 	var imageURL = "";
 	var email = "";
+	var current = 0;
 	
+	for(var i = 0; i < data["accounts"].length; i++) {
+		if(data["accounts"][i].username == username) {
+			current = data["accounts"][i].current;
+			break;
+		}
+	}
 	for(var i = 0; i < data["accounts"].length; i++) {
 		if(data["accounts"][i].username == username) {
 			age = data["accounts"][i].age;
@@ -28,6 +35,7 @@ exports.view = function(req, res){
 		'goal': goal,
 		'comments': comments, 
 		'imageURL': imageURL,
-		'email': email
+		'email': email,
+		'current': current
 	});
 };

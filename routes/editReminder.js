@@ -7,8 +7,16 @@ exports.view = function(req, res){
 	var reminder1 = "";
 	var reminder2 = "";
 	var reminder3 = "";
-
-		for(var i = 0; i < data["accounts"].length; i++) {
+	var current = 0;
+	
+	for(var i = 0; i < data["accounts"].length; i++) {
+		if(data["accounts"][i].username == username) {
+			current = data["accounts"][i].current;
+			break;
+		}
+	}
+	
+	for(var i = 0; i < data["accounts"].length; i++) {
 		if(data["accounts"][i].username == username) {
 			reminder1 = data["accounts"][i].reminder1;
 			reminder2 = data["accounts"][i].reminder2;
@@ -21,6 +29,7 @@ exports.view = function(req, res){
 		'username': username,
 		'reminder1': reminder1,
 		'reminder2': reminder2,
-		'reminder3': reminder3
+		'reminder3': reminder3,
+		'current': current
 	});
 };

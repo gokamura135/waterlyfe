@@ -4,6 +4,7 @@ var data = require('../data.json');
 exports.view = function(req, res){
 	
 	var username = req.query.username;
+	var current = req.query.current;
 	var age = "";
 	var goal = "";
 	var comments = "";
@@ -15,9 +16,12 @@ exports.view = function(req, res){
 			goal = data["accounts"][i].goal;
 			comments = data["accounts"][i].comments;
 			imageURL = data["accounts"][i].imageURL;
+			data["accounts"][i].current = current;
 			break;
 		}
 	}
+	
+	console.log("hiiiiiiiiiii: " + String(current));
 	
 	res.render('myProfile', 
 	{
@@ -25,6 +29,7 @@ exports.view = function(req, res){
 		'age': age, 
 		'goal': goal,
 		'comments': comments, 
-		'imageURL': imageURL
+		'imageURL': imageURL,
+		'current': current
 	});
 };

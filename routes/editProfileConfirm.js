@@ -7,7 +7,14 @@ exports.addFriend = function(req, res) {
 	var age = req.query.age;
 	var goal = req.query.goal;
 	var comments = req.query.comments;
+	var current = 0;
 	
+	for(var i = 0; i < data["accounts"].length; i++) {
+		if(data["accounts"][i].username == username) {
+			current = data["accounts"][i].current;
+			break;
+		}
+	}
 	for(var i = 0; i < data["accounts"].length; i++) {
 		if(data["accounts"][i].username == username) {
 			data["accounts"][i].email = email;
@@ -21,6 +28,7 @@ exports.addFriend = function(req, res) {
 	console.log(data);
 
 	res.render('editProfileConfirm', {
-		'username': username
+		'username': username,
+		'current': current
 	});
  }

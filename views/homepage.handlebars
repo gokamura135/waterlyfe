@@ -25,7 +25,7 @@
 		<script src="js/homepage.js"></script>
 	</head>
 	
-	<body onload='initial({{current}}, {{water}});'>
+	<body onload='initial({{water}}); initial2({{current}});'>
 		<!-- Water filling animation -->
 		<!--<link rel="stylesheet" href="css/water.css" />-->
 	
@@ -51,21 +51,25 @@
 					<form style="margin: 0px; padding: 0px;" method="get" action="./homepage"
 					data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type = "hidden" id="current" value={{current}} name="current" >
 					<input type="submit" value="Home">
 					</form>
 					<form style="margin: 0px; padding: 0px;" method="get" action="./calculator"
 					data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type = "hidden" id="current" value={{current}} name="current" >
 					<input type="submit" value="Use Calculator">
 					</form>
 					<form style="margin: 0px; padding: 0px;" method="get" action="./myProfile"
 					data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type = "hidden" id="current" value={{current}} name="current" >
 					<input type="submit" value="View My Profile">
 					</form>
 					<form style="margin: 0px; padding: 0px;" method="get" action="./setReminder"
 					data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type = "hidden" id="current" value={{current}} name="current" >
 					<input type="submit" value="Set Reminder">
 					</form>
 				</div><!-- /popup -->
@@ -109,6 +113,7 @@
 				<td class="homepage_td">
 					<form style="margin-bottom:0;" method="get" action="./calculator" data-ajax="false" rel="external"> 
 						<input type = "hidden" id="name" value={{username}} name="username" >
+						<input type = "hidden" id="current1" value='' name="current" >
 						<input type="submit" value="Calculate <br/>Today's <br/>Water Intake!"
 						style="background:#00FFFF;">
 					</form>
@@ -123,10 +128,12 @@
 					<br/>
 					<form style="margin-bottom:0;" method="get" action="./myProfile" data-ajax="false" rel="external"> 
 						<input type = "hidden" id="name" value={{username}} name="username" >
+						<input type = "hidden" id="current2" value='' name="current" >
 						<input type="submit" value="My Profile">
 					</form>
 					<form style="margin-bottom:0;" method="get" action="./setReminder" data-ajax="false" rel="external"> 
 						<input type = "hidden" id="name" value={{username}} name="username" >
+						<input type = "hidden" id="current3" value='' name="current" >
 						<input type="submit" value="Set Reminder">
 					</form>
 				</td>
@@ -140,6 +147,5 @@
 			</div><!-- /footer -->
 			
 		</div><!-- /page -->
-	
 	</body>
 </html>	
