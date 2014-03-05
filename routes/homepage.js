@@ -5,6 +5,9 @@ exports.view = function(req, res){
 	console.log(data);
 	
 	var username = req.query.username;
+	if(username == "") {
+		username = "guest"
+	}
 	
 	var water = 1;
 	var current = 0;

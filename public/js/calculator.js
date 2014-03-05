@@ -16,6 +16,7 @@ function reset() {
 	document.getElementById("weight").value="";
 	document.getElementById("minutes").value="";
 	document.getElementById("results").innerHTML="?";
+	$( "#saveBtn" ).button({ disabled: true });
 }
 
 function calculate() {
@@ -31,6 +32,7 @@ function calculate() {
 	if(document.getElementById("weight").value && document.getElementById("minutes").value) {
 		document.getElementById("results").innerHTML = oz;
 		document.getElementById("results").value = oz;
+		$( "#saveBtn" ).button({ disabled: false });
 	}
 	if(document.getElementById("weight").value == "")
 		document.getElementById("fill").innerHTML = "   Please input info.";
@@ -38,12 +40,13 @@ function calculate() {
 		document.getElementById("fill").innerHTML = "";
 	}
 
-			 if(document.getElementById("minutes").value == "")
+	if(document.getElementById("minutes").value == "")
 		document.getElementById("fill1").innerHTML = "   Please input info.";
 	else {
 		document.getElementById("fill1").innerHTML = "";
+		
 	}
-
+	
 }
 
 function addTotal() {

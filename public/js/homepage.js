@@ -1,5 +1,8 @@
+var count = 0;
+
 function initial(current, water) {
-	var rows = water; // 20; //document.getElementById('glass').value;
+
+	var rows = water; 
 	var heightNum = 200/rows;
 	//console.log(rows);
 	//alert("hello?");
@@ -28,4 +31,34 @@ function initial(current, water) {
 	
 	tab.appendChild(tbo);
 	root.appendChild(tab);
+}
+
+
+function addWater(current) {
+	console.log(count);
+	//count = Integer(current);
+	//var username = req.query.username;
+	var amount = parseInt(document.getElementById("amount").value);
+	//document.getElementById("row0").innerHTML = amount;
+	
+	var row = 0;
+	
+	for(var i = count; i < count + amount; i++) {
+		//document.getElementById("row0").innerHTML = i;
+		row = document.querySelector("#row" + String(i));
+		if(row != null)
+			row.style.backgroundColor = "#0000FF";
+	}
+	
+	count = count + amount;
+	
+	var numRows = document.getElementById("waterTable").rows.length;
+	
+	if(count >= numRows) {
+		alert("Daily Water Intake Complete!");
+	}
+	
+	document.getElementById("glass_label").innerHTML = 
+	"<h4>So far: " + String(count) + "/" + String(numRows) + " oz. for today!</h4>";
+
 }

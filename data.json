@@ -29,6 +29,21 @@
 			"reminder1": "03/31/2014 every day @ 2:00PM",
 			"reminder2": "04/01/2014 once @ 3:00AM",
 			"reminder3": "05/06/2015 every 2 hours @ 5:00PM"
+		},
+		{
+			"username": "guest",
+			"password": "",
+			"email": "guest@gmail.com",
+			"age": "who knows",
+			"weight": "how should I know",
+			"goal": "To become more healthy! I should sign up for an account now.",
+			"comments": "To sign up for an account, logout first using the top-right X. Afterwards, there should be a button right below the login button to sign up. Go try it out now!",
+			"imageURL": "http://ts4.mm.bing.net/th?id=HN.608029994649653067&pid=15.1&w=126&h=126&p=0",			
+			"water": 100,
+			"current": 0,
+			"reminder1": "03/31/2014 every day @ 2:00PM",
+			"reminder2": "04/01/2014 once @ 3:00AM",
+			"reminder3": "05/06/2015 every 2 hours @ 5:00PM"
 		}
 	]
 }

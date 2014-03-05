@@ -7,7 +7,6 @@ exports.addFriend = function(req, res) {
 	var age = req.query.age;
 	var goal = req.query.goal;
 	var comments = req.query.comments;
-	var imageURL = req.query.imageURL;
 	
 	for(var i = 0; i < data["accounts"].length; i++) {
 		if(data["accounts"][i].username == username) {
@@ -15,7 +14,6 @@ exports.addFriend = function(req, res) {
 			data["accounts"][i].age = age;
 			data["accounts"][i].goal = goal;
 			data["accounts"][i].comments = comments;
-			data["accounts"][i].imageURL = imageURL;
 			break;
 		}
 	}

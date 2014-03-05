@@ -44,24 +44,24 @@
 					Menu
 				</a>
 				<div data-role="popup" id="popupNested" data-theme="b" 
-				data-content-theme="a" style="margin:30; width:250px; background:#878787;">
-					<div align="center" style="color:#000000;">
-						<h3>GoHydrate</h3>
+				data-content-theme="a" style="margin:30; width:250px; background:#000000;">
+					<div align="center" style="color:#0099FF;">
+						<h3><b>GoHydrate!</b></h3>
 					</div>
 					<form style="margin: 0px; padding: 0px;" method="get" action="./homepage"
 					data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
 					<input type="submit" value="Home">
 					</form>
-					<form style="margin: 0px; padding: 0px;" method="get" action="./myProfile"
-					data-ajax="false" rel="external"> 
-					<input type = "hidden" id="name" value={{username}} name="username" >
-					<input type="submit" value="View My Profile">
-					</form>
 					<form style="margin: 0px; padding: 0px;" method="get" action="./calculator"
 					data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
 					<input type="submit" value="Use Calculator">
+					</form>
+					<form style="margin: 0px; padding: 0px;" method="get" action="./myProfile"
+					data-ajax="false" rel="external"> 
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type="submit" value="View My Profile">
 					</form>
 					<form style="margin: 0px; padding: 0px;" method="get" action="./setReminder"
 					data-ajax="false" rel="external"> 
@@ -100,14 +100,20 @@
 				<tr>
 				<td class="homepage_td">
 					<div id="glass_label">
-					So far: 
+					<h4>So far: 0/{{water}} oz. for today!</h4>
 					</div>
 					<div id="glass">
 					</div>
 				</td>
 				<td class="homepage_td">
+					<form style="margin-bottom:0;" method="get" action="./calculator" data-ajax="false" rel="external"> 
+						<input type = "hidden" id="name" value={{username}} name="username" >
+						<input type="submit" value="Calculate Today's Water Intake!"
+						style="background:#00FFFF;">
+					</form>
 					<div>
-						Log amount (oz.):
+						Log amount (oz.): <br/>
+						~ One cup = 8 oz. ~
 						<input type ="text" id="amount" value='0' name="amount" placeholder="oz">
 						<input type="button" value="Add Water" onclick="addWater({{current}});">
 					</div>
@@ -115,10 +121,6 @@
 					<form style="margin-bottom:0;" method="get" action="./myProfile" data-ajax="false" rel="external"> 
 						<input type = "hidden" id="name" value={{username}} name="username" >
 						<input type="submit" value="My Profile">
-					</form>
-					<form style="margin-bottom:0;" method="get" action="./calculator" data-ajax="false" rel="external"> 
-						<input type = "hidden" id="name" value={{username}} name="username" >
-						<input type="submit" value="Calculator">
 					</form>
 					<form style="margin-bottom:0;" method="get" action="./setReminder" data-ajax="false" rel="external"> 
 						<input type = "hidden" id="name" value={{username}} name="username" >
