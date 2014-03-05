@@ -30,7 +30,7 @@
 		<!--<link rel="stylesheet" href="css/water.css" />-->
 	
 		<!-- Start of Homepage -->
-		<div data-role="page" data-theme="a">
+		<div data-role="page" data-theme="a" id="one">
 			
 			<!--<script src="js/homepage.js"></script>-->
 		
@@ -96,24 +96,27 @@
 			</div><!-- /header -->
 
 			<div role="main" class="ui-content">
+			
 				<table class="homepage_table">
 				<tr>
 				<td class="homepage_td">
 					<div id="glass_label">
-					<h4>So far: 0/{{water}} oz. for today!</h4>
+					<h4>So far today: <br/>0/{{water}} oz.</h4>
 					</div>
-					<div id="glass">
+					<div id="glass" >
 					</div>
 				</td>
 				<td class="homepage_td">
 					<form style="margin-bottom:0;" method="get" action="./calculator" data-ajax="false" rel="external"> 
 						<input type = "hidden" id="name" value={{username}} name="username" >
-						<input type="submit" value="Calculate Today's Water Intake!"
+						<input type="submit" value="Calculate <br/>Today's <br/>Water Intake!"
 						style="background:#00FFFF;">
 					</form>
 					<div>
+						<h4>
 						Log amount (oz.): <br/>
-						~ One cup = 8 oz. ~
+						~One cup=8oz.~
+						</h4>
 						<input type ="text" id="amount" value='0' name="amount" placeholder="oz">
 						<input type="button" value="Add Water" onclick="addWater({{current}});">
 					</div>

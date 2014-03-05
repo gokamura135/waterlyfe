@@ -41,7 +41,7 @@ function addWater(current) {
 	var amount = parseInt(document.getElementById("amount").value);
 	//document.getElementById("row0").innerHTML = amount;
 	
-	var row = 0;
+	var row;
 	
 	for(var i = count; i < count + amount; i++) {
 		//document.getElementById("row0").innerHTML = i;
@@ -59,6 +59,6 @@ function addWater(current) {
 	}
 	
 	document.getElementById("glass_label").innerHTML = 
-	"<h4>So far: " + String(count) + "/" + String(numRows) + " oz. for today!</h4>";
+	"<h4>So far today: <br/>" + String(count) + "/" + String(numRows) + " oz.</h4>";
 
 }
