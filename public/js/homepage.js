@@ -87,3 +87,31 @@ function addWater(current) {
 	document.getElementById("current2").value = count;
 	document.getElementById("current3").value = count;
 }
+
+function resetWater(current) {
+	
+	var row;
+	
+	for(var i = count - 1; i >= 0; i--) {
+		//document.getElementById("row0").innerHTML = i;
+		row = document.querySelector("#row" + String(i));
+		if(row != null)
+			row.style.backgroundColor = "#FFFFFF";
+	}
+	
+	count = 0;
+	
+	var numRows = document.getElementById("waterTable").rows.length;
+	
+	if(count >= numRows) {
+		alert("Daily Water Intake Complete!");
+	}
+	
+	document.getElementById("glass_label").innerHTML = 
+	"<h4>So far today: <br/>" + String(count) + "/" + String(numRows) + " oz.</h4>";
+
+	document.getElementById("current").value = count;
+	document.getElementById("current1").value = count;
+	document.getElementById("current2").value = count;
+	document.getElementById("current3").value = count;
+}

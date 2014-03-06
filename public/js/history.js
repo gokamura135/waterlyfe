@@ -4,11 +4,11 @@ var xPadding = 30;
 var yPadding = 30;
  
 var data = { values:[
-        { X: "Jan", Y: 12 },
-        { X: "Feb", Y: 28 },
-        { X: "Mar", Y: 18 },
-        { X: "Apr", Y: 34 },
-        { X: "May", Y: 40 },
+        { X: "Nov", Y: 12 },
+        { X: "Dec", Y: 28 },
+        { X: "Jan", Y: 18 },
+        { X: "Feb", Y: 34 },
+        { X: "Mar", Y: 40 },
 ]};
 
 function getMaxY() {
