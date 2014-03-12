@@ -11,9 +11,9 @@
 			"imageURL": "http://www.silver-islands.com/images/avatars/snorlax150.gif",
 			"water": 125,
 			"current": 0,
-			"reminder1": "03/31/2014 every day @ 2:00PM",
-			"reminder2": "04/01/2014 once @ 3:00AM",
-			"reminder3": "05/06/2015 every 2 hours @ 5:00PM"
+			"reminder1": "Tuesday every 6 hours from 5:00am-5:00PM",
+			"reminder2": "Saturday once from 3:00PM",
+			"reminder3": "Sunday every 2 hours from 5:00PM-10:00PM"
 		},
 		{
 			"username": "bonnie",
@@ -26,24 +26,24 @@
 			"imageURL": "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1/c337.1.623.623/s160x160/1467428_10200182300599997_148071936_n.jpg",			
 			"water": 91,
 			"current": 0,
-			"reminder1": "03/31/2014 every day @ 2:00PM",
-			"reminder2": "04/01/2014 once @ 3:00AM",
-			"reminder3": "05/06/2015 every 2 hours @ 5:00PM"
+			"reminder1": "Tuesday every 6 hours from 5:00am-5:00PM",
+			"reminder2": "Saturday once from 3:00AM",
+			"reminder3": "Sunday every 2 hours from 5:00PM-10:00PM"
 		},
 		{
 			"username": "guest",
 			"password": "",
 			"email": "guest@gmail.com",
-			"age": "who knows",
-			"weight": "how should I know",
+			"age": "Who knows?",
+			"weight": "How should I know?",
 			"goal": "To become more healthy! I should sign up for an account now.",
 			"comments": "To sign up for an account, logout first using the top-right X. Afterwards, there should be a button right below the login button to sign up. Go try it out now!",
 			"imageURL": "http://ts4.mm.bing.net/th?id=HN.608029994649653067&pid=15.1&w=126&h=126&p=0",			
 			"water": 100,
 			"current": 0,
-			"reminder1": "03/31/2014 every day @ 2:00PM",
-			"reminder2": "04/01/2014 once @ 3:00AM",
-			"reminder3": "05/06/2015 every 2 hours @ 5:00PM"
+			"reminder1": "Tuesday every 6 hours from 5:00am-5:00PM",
+			"reminder2": "Saturday once from 3:00AM",
+			"reminder3": "Sunday every 2 hours from 5:00PM-10:00PM"
 		}
 	]
 }

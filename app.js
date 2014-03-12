@@ -27,6 +27,8 @@ var setReminder = require('./routes/setReminder');
 var editReminder = require('./routes/editReminder');
 var editReminder1 = require('./routes/editReminder1');
 var deleteReminder = require('./routes/deleteReminder');
+var editReminder2 = require('./routes/editReminder2');
+var editReminder3 = require('./routes/editReminder3');
 
 var template = require('./routes/template');
 
@@ -80,6 +82,9 @@ app.get('/setReminder', setReminder.view);
 app.get('/editReminder', editReminder.view);
 app.get('/editReminder1', editReminder1.view);
 app.get('/deleteReminder', deleteReminder.view);
+app.get('/editReminder2', editReminder2.view);
+app.get('/editReminder3', editReminder3.view);
+
 
 app.get('/template', template.view);
 
