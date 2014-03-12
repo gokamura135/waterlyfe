@@ -68,6 +68,12 @@
 					<input type = "hidden" id="current" value={{current}} name="current" >
 					<input type="submit" value="View My Profile">
 					</form>
+					<form style="margin: 0px; padding: 0px;" method="get" action="./history"
+					data-ajax="false" rel="external"> 
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type = "hidden" id="current" value={{current}} name="current" >
+					<input type="submit" value="View My History">
+					</form>
 					<form style="margin: 0px; padding: 0px;" method="get" action="./setReminder"
 					data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
@@ -102,7 +108,7 @@
 			</div><!-- /header -->
 
 			<div data-role="content" data-theme="a">
-				<h2>My History (Functionality under construction)</h2>
+				<h2>My History</h2>
 				
 				<form>
 					<table>
@@ -143,13 +149,6 @@
 					</td>
 				</tr>
 				</table>
-				
-				<form style="margin-bottom:0;" method="get" action="./myProfile" 
-				data-ajax="false" rel="external"> 
-					<input type = "hidden" id="name" value={{username}} name="username" >
-					<input type = "hidden" id="current" value={{current}} name="current" >
-					<input type="submit" value="Back to My Profile">
-				</form>
 				
 				<form style="margin-bottom:0;" method="get" action="./homepage" 
 				data-ajax="false" rel="external"> 

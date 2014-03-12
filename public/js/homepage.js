@@ -18,7 +18,7 @@ function initial(water) {
 	var tbo = document.createElement('tbody');
 	var row, cell;
 	
-	for(var i = rows-1; i >= 0; i--) {
+	for(var i = (rows-1); i >= 0; i--) {
 		row = document.createElement('tr');
 		row.id = "row" + String(i);
 		row.style.width = "100%";
@@ -64,7 +64,7 @@ function addWater(current) {
 	
 	var row;
 	
-	for(var i = count; i < count + amount; i++) {
+	for(var i = count; i < (count + amount); i++) {
 		//document.getElementById("row0").innerHTML = i;
 		row = document.querySelector("#row" + String(i));
 		if(row != null)
