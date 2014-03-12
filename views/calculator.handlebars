@@ -58,6 +58,12 @@
 					<input type = "hidden" id="current" value={{current}} name="current" >
 					<input type="submit" value="View My Profile">
 					</form>
+					<form style="margin: 0px; padding: 0px;" method="get" action="./history"
+					data-ajax="false" rel="external"> 
+					<input type = "hidden" id="name" value={{username}} name="username" >
+					<input type = "hidden" id="current" value={{current}} name="current" >
+					<input type="submit" value="View My History">
+					</form>
 					<form style="margin: 0px; padding: 0px;" method="get" action="./setReminder"
 					data-ajax="false" rel="external"> 
 					<input type = "hidden" id="name" value={{username}} name="username" >
@@ -114,9 +120,10 @@
 						<span id="fill1"></span><br/>
 					Intensity Level: <br/>
 					<input type="range" min="0" max="10" value="5" onchange="showValue(this.value)" size="150"/>
-					<span id="range">5</span><br/>
-					Results: <span id="results" value='0'>?</span> OZ
-					<span id="description"></span><br>
+					<!--<span id="range"></span>-->
+					<br/>
+					Results: <h2><center><span id="results" value='0'>?</span> OZ
+					<span id="description"></span></center></h2><br/>
 					<button onclick="calculate()">Calculate!</button>
 					<form role="form" method="get" action="/addWater">
 					<input type = "hidden" id="name" value={{username}} name="username" >
